@@ -5,7 +5,7 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { Videos, Sidebar } from "./";
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Education");
+  const [selectedCategory, setSelectedCategory] = useState("PTI");
   const [videos, setVideos] = useState(null);
 
   useEffect(() => {

@@ -1,6 +1,8 @@
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
+import FlagIcon from '@mui/icons-material/Flag';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
@@ -11,17 +13,39 @@ import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
+import SportsTennisIcon from '@mui/icons-material/SportsTennis';
+import Brightness3Icon from '@mui/icons-material/Brightness3';
+import TvIcon from '@mui/icons-material/Tv';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 
 export const logo = 'https://i.imgur.com/vyfknVf.png';
 
 export const categories = [
-  { name: 'Education', icon: <SchoolIcon />, },
-  { name: 'Gaming', icon: <SportsEsportsIcon />, },
-  { name: 'Sports', icon: <FitnessCenterIcon />, },
-  { name: 'Movie', icon: <OndemandVideoIcon />, },
-  { name: 'Live', icon: <LiveTvIcon />, },
-  { name: 'Comedy', icon: <TheaterComedyIcon />, },
-  { name: 'Gym', icon: <FitnessCenterIcon />, },
+  { name: 'PTI', icon: <FlagIcon />, },
+  { name: 'Imran Khan', icon: <FlagIcon />, },
+  { name: 'Imran Riaz Khan', icon: <NewspaperIcon />, },
+  { name: 'Shahbaz Gill', icon: <NewspaperIcon />, },
+  { name: 'Abdul Qadir', icon: <NewspaperIcon />, },
+  { name: 'ATP', icon: <SportsTennisIcon />, },
+  { name: 'Federer', icon: <SportsTennisIcon />, },
+  { name: 'Top Tennis Training', icon: <SportsTennisIcon />, },
+  { name: 'Karue Sell', icon: <SportsTennisIcon />, },
+  { name: 'Qari Mishary (iRecite)', icon: <Brightness3Icon />, },
+  { name: 'Dr. Israr Ahmed', icon: <Brightness3Icon />, },
+  { name: 'Javed Ghamidi', icon: <Brightness3Icon />, },
+  { name: 'Abbasids', icon: <FlagIcon />, },
+  { name: 'Seljuks', icon: <FlagIcon />, },
+  { name: 'Mamluks', icon: <FlagIcon />, },
+  { name: 'Ottomans', icon: <FlagIcon />, },
+  { name: 'Mughals', icon: <FlagIcon />, },
+  { name: 'Kung Fu Panda', icon: <TvIcon />, },
+  { name: 'Sonic Boom (Show)', icon: <TvIcon />, },
+  { name: 'TMNT 2003', icon: <TvIcon />, },
+  { name: 'Kingdom Hearts', icon: <SportsEsportsIcon />, },
+  { name: 'Zelda BOTW', icon: <SportsEsportsIcon />, },
+  { name: 'Trove', icon: <SportsEsportsIcon />, },
+  { name: 'Game Development', icon: <SportsEsportsIcon />, },
+  { name: 'Robotics', icon: <PrecisionManufacturingIcon />, },
 ];
 
 export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
