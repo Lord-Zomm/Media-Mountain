@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Media-Mountain/static/css/main.33c1bb93.css",
+    "main.js": "/Media-Mountain/static/js/main.25309b22.js",
+    "index.html": "/Media-Mountain/index.html",
+    "main.33c1bb93.css.map": "/Media-Mountain/static/css/main.33c1bb93.css.map",
+    "main.25309b22.js.map": "/Media-Mountain/static/js/main.25309b22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33c1bb93.css",
+    "static/js/main.25309b22.js"
+  ]
+}
