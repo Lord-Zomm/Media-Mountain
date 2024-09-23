@@ -12,22 +12,39 @@ const decodeHTML = (html) => {
 };
 
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => (
-  <Card sx={{ width: { xs: '100%', sm: '320px', md: "280px" }, boxShadow: "none", borderRadius: 0 }}>
+  <Card sx={{ position: 'relative', width: { xs: '100%', sm: '540px', md: '500px' }, boxShadow: "none", borderRadius: 0 }}>
     <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
       <CardMedia
         image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
         alt={snippet?.title}
-        sx={{ width: { xs: '100%', sm: '320px' }, height: 170 }}
+        sx={{
+          width: '100%', // Use full width of the card
+          height: 280, // Thumbnail height
+          objectFit: 'cover', // Cover the area, maintaining aspect ratio
+        }}
       />
     </Link>
-    <CardContent sx={{ backgroundColor: "#1E1E1E", height: '120px' }}>
+    <CardContent
+      sx={{
+        position: 'absolute',
+        bottom: '00px', // Move the box lower
+        left: 0,
+        right: 0,
+        backgroundColor: 'rgba(30, 30, 30, 0.7)', // Semi-transparent background
+        height: '50px', // Reduced height
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '10px 8px', // Adjust padding as needed
+      }}
+    >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <Typography
           variant="subtitle1"
           fontWeight="bold"
           color="#FFF"
           sx={{
-            fontSize: '1rem',
+            fontSize: '.9rem',
             whiteSpace: 'normal', // Allow the text to wrap
             overflow: 'hidden',   // Hide overflow if necessary
             textOverflow: 'ellipsis', // Show ellipsis (...) when overflowing
@@ -37,7 +54,7 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => (
         </Typography>
       </Link>
       <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
-        <Typography variant="subtitle2" color="gray" sx={{ fontSize: '0.9rem' }}>
+        <Typography variant="subtitle2" color="gray" sx={{ fontSize: '0.8rem', marginBottom: '-15px'}}>
           {decodeHTML(snippet?.channelTitle || demoChannelTitle)}
           <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
         </Typography>
