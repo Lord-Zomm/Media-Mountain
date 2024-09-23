@@ -12,7 +12,6 @@ const SearchBar = () => {
 
     if (searchTerm) {
       navigate(`/search/${searchTerm}`);
-
       setSearchTerm('');
     }
   };
@@ -31,9 +30,12 @@ const SearchBar = () => {
     >
       <input
         className='search-bar'
-        placeholder='Search...'
+        placeholder='Search'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        style={{
+          fontFamily: 'Roboto, sans-serif', // Change this to your desired font family
+        }}
       />
       <IconButton type='submit' sx={{ p: '10px', color: 'red' }} aria-label='search'>
         <SearchIcon />

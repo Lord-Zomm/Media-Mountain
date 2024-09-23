@@ -21,16 +21,25 @@ import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturi
 export const logo = 'https://i.imgur.com/vyfknVf.png';
 
 export const categories = [
-  { name: 'PTI', icon: <FlagIcon />, },
+  { name: 'Home', tag: 'PTI', icon: <HomeIcon />, },
+  { name: 'News', tag: 'Imran Riaz Khan', icon: <NewspaperIcon />, },
+  { name: 'Sports', tag: 'ATP', icon: <SportsTennisIcon />, },
+  { name: 'Quran', tag: 'Qari Mishary (iRecite)', icon: <Brightness3Icon />, },
+  { name: 'History', tag: 'Abbasids', icon: <FlagIcon />, },
+  { name: 'Movies', tag: 'Kung Fu Panda', icon: <OndemandVideoIcon />, },
+  { name: 'Shows', tag: 'Kung Fu Panda Legends of Awesomeness Hindi', icon: <TvIcon />, },
+  { name: 'Games', tag: 'Trove', icon: <SportsEsportsIcon />, },
+  { name: 'Development', tag: 'Game Development', icon: <CodeIcon />, },
+  { name: 'Science', tag: 'Robotics', icon: <PrecisionManufacturingIcon />, },
+  /*{ name: 'PTI', tag: 'PTI', icon: <FlagIcon />, },
   { name: 'Imran Khan', icon: <FlagIcon />, },
   { name: 'Imran Riaz Khan', icon: <NewspaperIcon />, },
   { name: 'Shahbaz Gill', icon: <NewspaperIcon />, },
-  { name: 'Abdul Qadir', icon: <NewspaperIcon />, },
   { name: 'ATP', icon: <SportsTennisIcon />, },
   { name: 'Federer', icon: <SportsTennisIcon />, },
   { name: 'Top Tennis Training', icon: <SportsTennisIcon />, },
   { name: 'Karue Sell', icon: <SportsTennisIcon />, },
-  { name: 'Qari Mishary (iRecite)', icon: <Brightness3Icon />, },
+  { name: 'Quran', tag: 'Qari Mishary (iRecite)', icon: <Brightness3Icon />, },
   { name: 'Dr. Israr Ahmed', icon: <Brightness3Icon />, },
   { name: 'Javed Ghamidi', icon: <Brightness3Icon />, },
   { name: 'Abbasids', icon: <FlagIcon />, },
@@ -45,7 +54,7 @@ export const categories = [
   { name: 'Zelda BOTW', icon: <SportsEsportsIcon />, },
   { name: 'Trove', icon: <SportsEsportsIcon />, },
   { name: 'Game Development', icon: <SportsEsportsIcon />, },
-  { name: 'Robotics', icon: <PrecisionManufacturingIcon />, },
+  { name: 'Robotics', icon: <PrecisionManufacturingIcon />, },*/
 ];
 
 export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
