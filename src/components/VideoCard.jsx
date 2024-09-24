@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from '@mui/material';
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -11,56 +12,57 @@ const decodeHTML = (html) => {
   return txt.value;
 };
 
-const VideoCard = ({ video: { id: { videoId }, snippet } }) => (
-  <Card sx={{ position: 'relative', width: { xs: '100%', sm: '540px', md: '500px' }, boxShadow: "none", borderRadius: 0 }}>
-    <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
-      <CardMedia
-        image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
-        alt={snippet?.title}
-        sx={{
-          width: '100%', // Use full width of the card
-          height: 280, // Thumbnail height
-          objectFit: 'cover', // Cover the area, maintaining aspect ratio
-        }}
-      />
-    </Link>
-    <CardContent
-      sx={{
-        position: 'absolute',
-        bottom: '00px', // Move the box lower
-        left: 0,
-        right: 0,
-        backgroundColor: 'rgba(30, 30, 30, 0.7)', // Semi-transparent background
-        height: '50px', // Reduced height
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '10px 8px', // Adjust padding as needed
-      }}
-    >
-      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-        <Typography
-          variant="subtitle1"
-          fontWeight="bold"
-          color="#FFF"
+const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
+  const isPortrait = useMediaQuery("(orientation: portrait)");
+
+  // Extracting date, adjust based on your data structure
+  const publishDate = snippet?.publishedAt ? new Date(snippet.publishedAt).toLocaleDateString() : "Unknown date";
+
+  return (
+    <Card sx={{ width: { xs: '100%', sm: isPortrait ? '320px' : '500px' }, boxShadow: "none", borderRadius: 0 }}>
+      <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
+        <CardMedia
+          image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
+          alt={snippet?.title}
           sx={{
-            fontSize: '.9rem',
-            whiteSpace: 'normal', // Allow the text to wrap
-            overflow: 'hidden',   // Hide overflow if necessary
-            textOverflow: 'ellipsis', // Show ellipsis (...) when overflowing
+            width: '100%',
+            height: isPortrait ? 170 : 280,
+            objectFit: 'cover',
           }}
-        >
-          {decodeHTML(snippet?.title.slice(0, 100) || demoVideoTitle.slice(0, 100))}
-        </Typography>
+        />
       </Link>
-      <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
-        <Typography variant="subtitle2" color="gray" sx={{ fontSize: '0.8rem', marginBottom: '-15px'}}>
-          {decodeHTML(snippet?.channelTitle || demoChannelTitle)}
-          <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
-        </Typography>
-      </Link>
-    </CardContent>
-  </Card>
-);
+      <CardContent sx={{ backgroundColor: "#1E1E1E", height: isPortrait ? '150px' : '67px' }}>
+        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+          <Typography
+            variant="subtitle1"
+            fontWeight="bold"
+            color="#FFF"
+            sx={{
+              fontSize: isPortrait ? '1rem' : '.9rem',
+              whiteSpace: 'normal',
+              overflow: 'hidden',
+              marginTop: '-3px',
+              marginBottom: '7px',
+              textOverflow: 'ellipsis',
+            }}
+          >
+            {decodeHTML(snippet?.title.slice(0, 100) || demoVideoTitle.slice(0, 100))}
+          </Typography>
+        </Link>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
+            <Typography variant="subtitle2" color="gray" sx={{ fontSize: isPortrait ? '0.9rem' : '0.8rem', marginRight: '8px' }}>
+              {decodeHTML(snippet?.channelTitle || demoChannelTitle)}
+              <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
+            </Typography>
+          </Link>
+          <Typography variant="caption" color="gray" sx={{ fontSize: isPortrait ? '0.8rem' : '0.7rem' }}>
+            {publishDate}
+          </Typography>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default VideoCard;
